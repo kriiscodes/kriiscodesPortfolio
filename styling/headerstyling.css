@@ -1,0 +1,329 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.genLayout {
+  max-width: 1000px;
+  margin: auto;
+}
+header {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  background: url("/images/result_0.png") no-repeat center center;
+  /* background-repeat: no-repeat; */
+  background-size: cover;
+   color: white;
+  animation: bgMove 35s linear infinite;
+ 
+}
+
+@keyframes bgMove {
+  0% { background-position: center top; }
+  50% { background-position: center center; }
+  100% { background-position: center top; }
+}
+
+
+
+nav {
+  /* border: solid; */
+  padding-block: 15px;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#homeCol {
+  color: #8c14fc;
+  font-size: 1.2rem;
+  opacity: ;
+}
+
+#logo {
+  /* border: solid; */
+  width: 3rem;
+  height: 3.3rem;
+  object-fit: contain;
+  overflow: hidden;
+}
+
+nav > ul {
+  /* border: solid; */
+  width: 40%;
+  list-style-type: none;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+ 
+}
+
+nav > ul > li {
+  display: flex;
+  align-items: center;
+  letter-spacing: 2px;
+}
+
+nav > ul > li > a,
+nav > a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.1rem;
+}
+nav > ul > li > a,
+.iconBtn {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  opacity: 0.7;
+  font-size: 1.1rem;
+  padding-bottom: 4px; /* space for underline */
+}
+
+nav > ul > li > a::after,
+.iconBtn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #8c14fc; /* underline color */
+  transition: width 0.4s ease;
+}
+
+nav > ul > li > a:hover::after,
+.iconBtn:hover::after {
+  width: 100%;
+}
+
+nav > ul > li > a:hover,
+.iconBtn:hover {
+  color: rgb(255, 255, 255);
+  opacity: 1;
+}
+
+.iconBtn {
+  background: none;
+  border: none;
+  color: white;
+  opacity: 0.7;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+/* styling for darkMode */
+
+.hero {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  position: relative;
+  width: 100%;
+  margin-top: 5rem;
+}
+
+.socials {
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.socials > ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.socials a {
+  color: white;
+  font-size: 1.4rem;
+  transition: 0.3s ease;
+  opacity: 0.7;
+}
+
+.socials a:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.heroContent {
+  padding-block: 2rem;
+  line-height: 1.5;
+  width: 1000px;
+  padding-bottom: 7rem;
+}
+
+.heroContent > h1 {
+ font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: 900;
+  letter-spacing: clamp(5px, 2vw, 15px);
+}
+
+.heroContent > p {
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  letter-spacing: .1px;
+}
+
+.heroContent > a {
+  margin-top: 25px;
+}
+
+/* button base */
+.btnFill {
+  position: relative;
+  display: inline-block;
+  padding: clamp(0.4rem, 1.5vw, 0.7rem) clamp(1.5rem, 4vw, 2rem);
+  background: #8c14fcc5; /* original color */
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden; /* hide the sliding rectangle overflow */
+  text-decoration: none;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+/* keep text always on top */
+.btnFill > span {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+}
+
+/* the sliding darker rectangle */
+.btnFill::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #370764c5; /* hover / sliding color */
+  transform: translateX(-100%); /* start completely to the left (off-button) */
+  transition: transform 0.73s cubic-bezier(0.22, 0.9, 0.35, 1); /* smooth timing */
+  z-index: 1; /* sits above base background, below text */
+  pointer-events: none;
+}
+
+/* hover: move the rectangle all the way right (sweeps across) and lift a bit */
+.btnFill:hover::before {
+  transform: translateX(100%); /* end fully moved to the right (off-button) */
+}
+
+#works {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.worksContent {
+  display: flex;
+  flex-direction: column; /* stack text and arrow vertically */
+  align-items: center; /* center horizontally */
+  letter-spacing: 2px;
+}
+
+.worksContent > h4 {
+  color: white;
+  font-weight: 500;
+  margin: 0;
+}
+
+.arrow {
+  font-size: 1.5rem;
+  margin-top: 5px;
+  animation: bounce 1.5s infinite;
+  opacity: 0.7;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+/* media query */
+
+@media (max-width: 768px) {
+
+
+
+    nav > ul {
+    width: 60%;
+  }
+
+  #logo {
+    width: 2.5rem;
+    height: auto;
+  }
+
+ .hero {
+    flex-direction: column;  /* keep vertical stacking */
+    text-align: left;        /* makes text align left too */
+    margin-top: 3rem;
+    padding-left: 1rem;      /* add some left padding for breathing room */
+}
+
+.heroContent{
+  /* border: solid; */
+  width: 95%;
+}
+  .socials {
+    position: static;
+    transform: none;
+    margin-top: 1.5rem;
+  }
+
+  .socials > ul {
+    flex-direction: row;
+    gap: 1.5rem;
+    justify-content: center;
+
+  }
+}
+
+@media (max-width: 480px) {
+   .arrow {
+    font-size: 1.2rem;
+  }
+   nav > ul {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  #homeCol, nav > ul > li > a {
+    font-size: 1rem;
+  }
+  .heroContent > h1 {
+    font-size: clamp(1.5rem, 10vw, 2.2rem);
+    letter-spacing: 3px;
+  }
+
+  .heroContent > p {
+    font-size: clamp(0.8rem, 4vw, 1rem);
+  }
+
+  .btnFill {
+    font-size: clamp(0.9rem, 3vw, 1rem);
+    padding: clamp(0.4rem, 2vw, 0.6rem) clamp(1rem, 3vw, 1.5rem);
+  }
+}
