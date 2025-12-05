@@ -335,7 +335,6 @@ nav > ul > li > a:hover,
   }
 }
 
-/* media query */
 
 @media (max-width: 900px) {
   
@@ -437,24 +436,6 @@ nav > ul > li > a:hover,
     justify-content: center;
 
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 @media (max-width: 480px) {
