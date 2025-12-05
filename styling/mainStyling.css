@@ -1,0 +1,365 @@
+
+#mainHeading{
+    padding-top: 6rem;
+    text-align: center;
+    font-weight: 900;
+    font-size: 2rem;
+    opacity: .9;
+
+}
+
+.workCards {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  border-inline: solid 1px rgb(237, 231, 231);
+  max-width: 900px;
+  margin: auto;
+  padding: 4rem 1rem; 
+  display: flex;
+  flex-direction: column;
+  gap: 7rem; 
+  text-align: center;
+}
+
+
+/* .workCards > h1{
+    margin-top: 2rem;
+    letter-spacing: 2px;
+    opacity: .7;
+
+} */
+
+
+
+.workCard1 , .workCard2, .workCard3, .workCard4{
+
+  z-index: 0;
+  min-height: clamp(30rem, 48vh, 40rem);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden; 
+  box-shadow: .1rem .1rem 4rem #7e7e7e;
+  cursor: pointer;
+  
+}
+
+
+.workCard1{
+    background: url(/images/popular_product.png) no-repeat center center;
+    margin-right: -4rem;
+    background-size: cover;
+}
+
+
+.workCard2{
+  background: url(/images/Rectangle\ 1441.png) no-repeat center center ;
+  margin-left: -4rem;
+  background-size: cover;
+}
+
+.workCard3{
+  background: url(/images/Screenshot\ \(2\).png) no-repeat center center ;
+  margin-right: -4rem;
+  background-size: cover;
+}
+
+.workCard4{
+  background: url(/images/Screenshot\ \(1\).png) no-repeat center center ;
+  margin-left: -4rem;
+  background-size: cover;
+}
+
+
+.workCard1::before, .workCard2::before, .workCard3::before, .workCard4::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* background: inherit;
+  background-size: inherit;
+  background-position: inherit; */
+  /* filter: blur(0); */
+  /* transform: scale(1.1); */
+  z-index: 0;
+  
+  background-color: rgba(27, 27, 41, 0.8); 
+  background-blend-mode: darken; 
+}
+
+
+.workCard1 > *, .workCard2 > *, .workCard3 > *, .workCard4 > * {
+  position: relative;
+  z-index: 5;
+}
+
+
+
+.workCard1::after,
+.workCard2::after,
+.workCard3::after,
+.workCard4::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  background: rgba(55, 7, 100, 0.5); 
+  transform: translateX(-100%); 
+  transition: transform 1s cubic-bezier(0.22, 0.9, 0.35, 1);
+  z-index: 4; 
+  pointer-events: none;
+}
+
+.workCard1:hover::after,
+.workCard2:hover::after,
+.workCard3:hover::after,
+.workCard4:hover::after {
+  transform: translateX(0); 
+}
+
+.workCard1 > h1,
+.workCard2 > h1,
+.workCard3 > h1,
+.workCard4 > h1 {
+  position: absolute;
+  top: -1.5rem;     
+  right: 0;         
+  left: auto;       
+  font-size: 10rem;
+  opacity: 0;
+  transform-origin: top right;     
+  transform: translateY(40px) scale(0.85);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+
+.workCard2 > h1,
+.workCard4 > h1 {
+  left: 0;
+  right: auto;
+  transform-origin: top left;
+}
+
+.workCard1:hover > h1,
+.workCard2:hover > h1,
+.workCard3:hover > h1,
+.workCard4:hover > h1{
+  opacity: 1;
+  transform: translateY(-10px) scale(1); 
+  color: white;
+}
+
+.workCardContent1, .workCardContent3{
+    position: absolute;
+    bottom: 5rem;
+    left: 5rem;
+    text-align: start;
+    line-height: 3rem;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.workCardContent2, .workCardContent4{
+    position: absolute;
+    bottom: 5rem;
+    right: 5rem;
+    text-align: end;
+    line-height: 3rem;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+
+}
+
+.workCard1:hover .workCardContent1,
+.workCard2:hover .workCardContent2,
+.workCard3:hover .workCardContent3,
+.workCard4:hover .workCardContent4
+{
+  transform: translateY(-14px) scale(1.1);
+  opacity: 1;
+}
+
+
+.workCardContent1 > h1, .workCardContent2 > h1, .workCardContent3 > h1, .workCardContent4 > h1{
+    font-size: 3.5rem;
+    font-style: oblique;
+    letter-spacing: .1rem;
+    color: #ffffff;
+   
+}
+
+.workCardContent1 > p, .workCardContent2 > p, .workCardContent3 > p, .workCardContent4 > p{
+    font-weight: 100;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #EDE7FF;
+    word-spacing: 2px;
+}
+
+
+
+
+
+
+
+.btnFillWorkCard {
+  position: relative;
+  display: inline-block;
+  padding: 1rem 1.2rem;
+  background:#d310a5; 
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden; 
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+
+.btnFillWorkCard > span {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+}
+
+
+.btnFillWorkCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #370764c5; 
+  transform: translateX(-100%);
+  transition: transform 0.73s cubic-bezier(0.22, 0.9, 0.35, 1);
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+.btnFillWorkCard:hover::before {
+  transform: translateX(100%);
+}
+
+
+/* ===========================
+   PROJECTS – RESPONSIVE
+   =========================== */
+
+@media (max-width: 900px) {
+
+  .workCards {
+    padding: 3rem 1rem;
+    gap: 5rem;
+  }
+
+  .workCard1,
+  .workCard2,
+  .workCard3,
+  .workCard4 {
+    min-height: 28rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* number (01, 02...) */
+  .workCard1 > h1,
+  .workCard2 > h1,
+  .workCard3 > h1,
+  .workCard4 > h1 {
+    font-size: 6rem;
+    top: -1rem;
+  }
+
+  .workCardContent1,
+  .workCardContent2,
+  .workCardContent3,
+  .workCardContent4 {
+    bottom: 3rem;
+    left: 2rem !important;
+    right: 2rem !important;
+    text-align: left !important;
+    line-height: 2.3rem;
+  }
+
+  .workCardContent1 h1,
+  .workCardContent2 h1,
+  .workCardContent3 h1,
+  .workCardContent4 h1 {
+    font-size: 2.5rem;
+  }
+
+  .workCardContent1 p,
+  .workCardContent2 p,
+  .workCardContent3 p,
+  .workCardContent4 p {
+    font-size: 1rem;
+  }
+
+  .btnFillWorkCard {
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+
+
+
+@media (max-width: 500px) {
+
+  #mainHeading {
+    font-size: 1.6rem;
+  }
+
+  .workCards {
+    padding: 2.5rem 0.6rem;
+    gap: 4rem;
+  }
+
+  .workCard1,
+  .workCard2,
+  .workCard3,
+  .workCard4 {
+    min-height: 23rem;
+  }
+
+  /* numbers */
+  .workCard1 > h1,
+  .workCard2 > h1,
+  .workCard3 > h1,
+  .workCard4 > h1 {
+    font-size: 4.5rem;
+  }
+
+  .workCardContent1,
+  .workCardContent2,
+  .workCardContent3,
+  .workCardContent4 {
+    bottom: 2rem;
+    left: 1.5rem !important;
+    right: 1.5rem !important;
+    line-height: 1.9rem;
+  }
+
+  .workCardContent1 h1,
+  .workCardContent2 h1,
+  .workCardContent3 h1,
+  .workCardContent4 h1 {
+    font-size: 1.9rem;
+  }
+
+  .workCardContent1 p,
+  .workCardContent2 p,
+  .workCardContent3 p,
+  .workCardContent4 p {
+    font-size: 0.9rem;
+  }
+
+  .btnFillWorkCard {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}
+

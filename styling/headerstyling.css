@@ -3,9 +3,12 @@
   margin: 0;
   box-sizing: border-box;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body{
   font-family: 'Courier New', Courier, monospace;
+  background-color:#fcfcfc ;
 }
 
 .genLayout {
@@ -13,21 +16,36 @@ body{
   margin: auto;
 }
 header {
-  height: 100vh;
+  height: 100dvh;
   width: 100%;
   position: relative;
-  background: url("/images/result_0.png") no-repeat center center;
-  /* background-repeat: no-repeat; */
+  background: url("/images/upscaled_4x_Kriiscodes\ Logo\ Glow\ on\ Navy\ Background.jpg") no-repeat center center;
   background-size: cover;
-   color: white;
-  animation: bgMove 35s linear infinite;
+  color: white;
+ 
  
 }
 
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #1c1d25; 
+  opacity: 0.8;     
+  z-index: 1;
+}
+
+header * {
+  position: relative;
+  z-index: 2; 
+}
 @keyframes bgMove {
-  0% { background-position: center top; }
-  50% { background-position: center center; }
-  100% { background-position: center top; }
+  0%   { background-position: left top; }
+  50%  { background-position: right center; }
+  100% { background-position: left top; }
 }
 
 
@@ -35,6 +53,7 @@ header {
 nav {
   /* border: solid; */
   padding-block: 15px;
+  padding-inline: 15px;
   height: auto;
   display: flex;
   justify-content: space-between;
@@ -44,7 +63,6 @@ nav {
 #homeCol {
   color: #8c14fc;
   font-size: 1.2rem;
-  opacity: ;
 }
 
 #logo {
@@ -84,7 +102,7 @@ nav > ul > li > a,
   color: white;
   opacity: 0.7;
   font-size: 1.1rem;
-  padding-bottom: 4px; /* space for underline */
+  padding-bottom: 4px; 
 }
 
 nav > ul > li > a::after,
@@ -95,7 +113,7 @@ nav > ul > li > a::after,
   bottom: 0;
   width: 0%;
   height: 2px;
-  background: #8c14fc; /* underline color */
+  background: #8c14fc;
   transition: width 0.4s ease;
 }
 
@@ -120,7 +138,7 @@ nav > ul > li > a:hover,
   transition: 0.25s ease;
 }
 
-/* styling for darkMode */
+
 
 .hero {
   height: 70vh;
@@ -146,23 +164,31 @@ nav > ul > li > a:hover,
   gap: 3rem;
 }
 
-.socials a {
+.socials  a {
   color: white;
   font-size: 1.4rem;
   transition: 0.3s ease;
   opacity: 0.7;
 }
 
-.socials a:hover {
+.socials  a:hover {
   opacity: 1;
   transform: scale(1.1);
 }
+
+
+.socials a i {
+  font-size: clamp(1.2rem, 3vw, 2rem);
+}
+
 
 .heroContent {
   padding-block: 2rem;
   line-height: 1.5;
   width: 1000px;
   padding-bottom: 7rem;
+  padding-inline: 15px;
+  
 }
 
 .heroContent > h1 {
@@ -185,24 +211,24 @@ nav > ul > li > a:hover,
   position: relative;
   display: inline-block;
   padding: clamp(0.4rem, 1.5vw, 0.7rem) clamp(1.5rem, 4vw, 2rem);
-  background: #8c14fcc5; /* original color */
+  background: #8c14fcc5; 
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  overflow: hidden; /* hide the sliding rectangle overflow */
+  overflow: hidden; 
   text-decoration: none;
   font-size: clamp(1rem, 2vw, 1.2rem);
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 2px;
 }
 
-/* keep text always on top */
+
 .btnFill > span {
   position: relative;
   z-index: 2;
   display: inline-block;
 }
 
-/* the sliding darker rectangle */
+
 .btnFill::before {
   content: "";
   position: absolute;
@@ -210,16 +236,16 @@ nav > ul > li > a:hover,
   left: 0;
   width: 100%;
   height: 100%;
-  background: #370764c5; /* hover / sliding color */
-  transform: translateX(-100%); /* start completely to the left (off-button) */
-  transition: transform 0.73s cubic-bezier(0.22, 0.9, 0.35, 1); /* smooth timing */
-  z-index: 1; /* sits above base background, below text */
+  background: #370764c5; 
+  transform: translateX(-100%); 
+  transition: transform 0.73s cubic-bezier(0.22, 0.9, 0.35, 1); 
+  z-index: 1; 
   pointer-events: none;
 }
 
-/* hover: move the rectangle all the way right (sweeps across) and lift a bit */
+
 .btnFill:hover::before {
-  transform: translateX(100%); /* end fully moved to the right (off-button) */
+  transform: translateX(100%);
 }
 
 #works {
@@ -233,8 +259,8 @@ nav > ul > li > a:hover,
 
 .worksContent {
   display: flex;
-  flex-direction: column; /* stack text and arrow vertically */
-  align-items: center; /* center horizontally */
+  flex-direction: column; 
+  align-items: center; 
   letter-spacing: 2px;
 }
 
@@ -251,6 +277,54 @@ nav > ul > li > a:hover,
   opacity: 0.7;
 }
 
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* MOBILE MENU */
+.mobileMenu {
+  display: none;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: #1c1d25;
+  width: 100%;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.mobileMenu a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+
+.mobileMenu a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: #8c14fc;
+  transition: width 0.4s ease;
+}
+
+.mobileMenu a:hover::after {
+  width: 100%;
+}
+
+.mobileMenu a:hover {
+  opacity: 1;
+}
+
 @keyframes bounce {
   0%,
   100% {
@@ -263,34 +337,98 @@ nav > ul > li > a:hover,
 
 /* media query */
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  
+  nav {
+    position: relative;
+    padding-block: 15px;
+  }
 
+  /* Hide the desktop nav */
+  .navLinks {
+    display: none;
+  }
 
+  /* Hamburger always visible on mobile */
+  .hamburger {
+    display: block;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    position: absolute;
+    top: 25px;
+    right: 10px;
+    z-index: 30; /* Stays ABOVE the dropdown */
+  }
 
-    nav > ul {
-    width: 60%;
+  /* MOBILE MENU — hidden by default */
+  .mobileMenu {
+    position: absolute;
+    top: 0px; /* drops BELOW hamburger */
+    right: 0;
+    width: 50%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.8rem;
+    background: rgba(28, 29, 37, 0.96);
+    padding: 25px 0;
+    z-index: 20;
+  }
+
+  /* When opened */
+  .mobileMenu.open {
+    display: flex;
+
+  }
+
+  /* Mobile menu links */
+  .mobileMenu > a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+
+  .mobileMenu > a:hover {
+    opacity: 1;
+  }
+
+  /* Theme toggle inside mobile menu */
+  #themeToggleMobile {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
   }
 
   #logo {
     width: 2.5rem;
-    height: auto;
   }
 
+
+  header{
+   height: 100dvh;
+  }
  .hero {
-    flex-direction: column;  /* keep vertical stacking */
-    text-align: left;        /* makes text align left too */
+    flex-direction: column;  
+    text-align: left;       
     margin-top: 3rem;
-    padding-left: 1rem;      /* add some left padding for breathing room */
+    padding-left: 1rem;      
 }
 
 .heroContent{
   /* border: solid; */
   width: 95%;
+
 }
   .socials {
     position: static;
-    transform: none;
-    margin-top: 1.5rem;
+    /* transform: none; */
+    margin-top: rem;
   }
 
   .socials > ul {
@@ -299,6 +437,24 @@ nav > ul > li > a:hover,
     justify-content: center;
 
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 @media (max-width: 480px) {

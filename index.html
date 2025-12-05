@@ -11,27 +11,41 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="styling/headerstyling.css" />
+    <link rel="stylesheet" href="styling/headerStyling.css" />
+    <link rel="stylesheet" href="styling/mainStyling.css" />
+    <link rel="stylesheet" href="styling/footerStyling.css" />
   </head>
   <body>
     <header id="home">
       <nav class="genLayout">
-        <a href=""
+        <a href="#home"
           ><img
             src="./images/upscaled_10x_Kriiscodes Logo Premium Minimal.png"
             alt="Logo"
             id="logo"
         /></a>
-        <ul>
+        <ul class="navLinks">
           <li><a href="#home" id="homeCol">Home</a></li>
           <li><a href="">Projects</a></li>
           <li><a href="">Contact</a></li>
           <li>
-            <button id="themeToggle" class="iconBtn">
+            <button id="themeToggle" id="hamburger" class="iconBtn">
               <i class="fa-solid fa-circle-half-stroke"></i>
             </button>
           </li>
         </ul>
+        <button class="hamburger">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="mobileMenu">
+          <a href="#home">Home</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+          <button id="themeToggleMobile" class="iconBtn">
+            <i class="fa-solid fa-circle-half-stroke"></i>
+          </button>
+        </div>
       </nav>
       <div class="hero">
         <div class="genLayout">
@@ -44,19 +58,19 @@
         <div class="socials">
           <ul>
             <li>
-              <a href=""><i class="fa-brands fa-x-twitter fa-2xl"></i></a>
+              <a href=""><i class="fa-brands fa-x-twitter"></i></a>
             </li>
             <li>
-              <a href=""><i class="fa-brands fa-linkedin-in fa-2xl"></i></a>
+              <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
             </li>
             <li>
-              <a href=""><i class="fa-brands fa-github fa-2xl"></i></a>
+              <a href=""><i class="fa-brands fa-github"></i></a>
             </li>
             <li>
-              <a href=""><i class="fa-brands fa-instagram fa-2xl"></i></a>
+              <a href=""><i class="fa-brands fa-instagram"></i></a>
             </li>
             <li>
-              <a href=""><i class="fa-brands fa-discord fa-2xl"></i></a>
+              <a href=""><i class="fa-brands fa-discord"></i></a>
             </li>
           </ul>
         </div>
@@ -68,5 +82,77 @@
         </div>
       </div>
     </header>
+    <main>
+      <h1 id="mainHeading">Projects</h1>
+      <div class="workCards">
+        <div class="workCard1">
+          <h1>01</h1>
+          <div class="workCardContent1">
+            <h1>Cafe Street</h1>
+            <p>Your quick, easy coffee ordering app.</p>
+            <button class="btnFillWorkCard"><span>View Project</span></button>
+          </div>
+        </div>
+        <div class="workCard2">
+          <h1>02</h1>
+          <div class="workCardContent2">
+            <h1>Furniture landing page</h1>
+            <p>
+              Elevate your home with modern furniture made from premium,
+              sustainable materials.
+            </p>
+            <button class="btnFillWorkCard"><span>View Project</span></button>
+          </div>
+        </div>
+        <div class="workCard3">
+          <h1>03</h1>
+          <div class="workCardContent3">
+            <h1>UplLearning Project</h1>
+            <p>The Only Platform You Need.</p>
+            <button class="btnFillWorkCard"><span>View Project</span></button>
+          </div>
+        </div>
+        <div class="workCard4">
+          <h1>04</h1>
+          <div class="workCardContent4">
+            <h1>Login Recharge</h1>
+            <p>Power Up Your Service.</p>
+            <button class="btnFillWorkCard"><span>View Project</span></button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <a href="#home" class="logo-link">
+        <div class="logo-wrapper">
+          <img
+            src="/images/upscaled_10x_Kriiscodes Logo Premium Minimal.png"
+            class="footer-logo"
+            alt="logo"
+          />
+          <span class="hover-text">Top</span>
+        </div>
+      </a>
+      <ul class="footerList">
+        <li>
+          <a href="">Twitter</a>
+        </li>
+        <li>
+          <a href="">linkedin</a>
+        </li>
+        <li>
+          <a href="">Github</a>
+        </li>
+        <li>
+          <a href="">Instagram</a>
+        </li>
+        <li>
+          <a href="">Discord</a>
+        </li>
+      </ul>
+      <h3>© 2025 Kriiscodes</h3>
+    </footer>
+    <script src="/app.js"></script>
   </body>
 </html>
