@@ -10,7 +10,7 @@
 
 .workCards {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  border-inline: solid 1px rgb(237, 231, 231);
+  border-inline: solid 2.5px rgb(237, 231, 231);
   max-width: 900px;
   margin: auto;
   padding: 4rem 1rem; 
@@ -38,34 +38,34 @@
   flex-direction: column;
   position: relative;
   overflow: hidden; 
-  box-shadow: .1rem .1rem 4rem #7e7e7e;
+  box-shadow: .1rem .1rem 4rem #969696;
   cursor: pointer;
   
 }
 
 
 .workCard1{
-    background: url(/images/popular_product.png) no-repeat center center;
-    margin-right: -4rem;
+    background: url(../images/popular_product.png) no-repeat center center;
+    margin-right: -2.2rem;
     background-size: cover;
 }
 
 
 .workCard2{
-  background: url(/images/Rectangle\ 1441.png) no-repeat center center ;
-  margin-left: -4rem;
+  background: url(../images/Rectangle\ 1441.png) no-repeat center center ;
+  margin-left: -2.2rem;
   background-size: cover;
 }
 
 .workCard3{
-  background: url(/images/Screenshot\ \(2\).png) no-repeat center center ;
-  margin-right: -4rem;
+  background: url(../images/Screenshot\ \(2\).png) no-repeat center center ;
+  margin-right: -2.2rem;
   background-size: cover;
 }
 
 .workCard4{
-  background: url(/images/Screenshot\ \(1\).png) no-repeat center center ;
-  margin-left: -4rem;
+  background: url(../images/Screenshot\ \(1\).png) no-repeat center center ;
+  margin-left: -2.2rem;
   background-size: cover;
 }
 
@@ -74,13 +74,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  /* background: inherit;
-  background-size: inherit;
-  background-position: inherit; */
-  /* filter: blur(0); */
-  /* transform: scale(1.1); */
   z-index: 0;
-  
   background-color: rgba(27, 27, 41, 0.8); 
   background-blend-mode: darken; 
 }
@@ -269,20 +263,18 @@
   .workCard2 > h1,
   .workCard3 > h1,
   .workCard4 > h1 {
-    font-size: 6rem;
-    top: -1rem;
+    display: none;
   }
 
   .workCardContent1,
   .workCardContent2,
   .workCardContent3,
   .workCardContent4 {
-    bottom: 3rem;
-    left: 2rem !important;
-    right: 2rem !important;
-    text-align: left !important;
-    line-height: 2.3rem;
+    transform: none !important;
+    opacity: 1 !important;
+    transition: none !important;
   }
+
 
   .workCardContent1 h1,
   .workCardContent2 h1,
@@ -302,12 +294,54 @@
     padding: 0.7rem 1rem;
     font-size: 0.9rem;
   }
+
+  
+  /* Disable overlay animation */
+
+
+
+  
+.workCard1::before, .workCard2::before, .workCard3::before, .workCard4::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: rgba(27, 27, 41, 0.8); 
+  background-blend-mode: darken; 
+}
+  .workCard1::after,
+  .workCard2::after,
+  .workCard3::after,
+  .workCard4::after {
+    background: none;
+    transform: translateX(0) !important;
+    transition: none !important;
+  }
+
+  /* Disable number animation */
+  .workCard1 > h1,
+  .workCard2 > h1,
+  .workCard3 > h1,
+  .workCard4 > h1 {
+    transform: translateY(0) scale(1) !important;
+    opacity: 1 !important;
+    transition: none !important;
+  }
+
+  /* Disable content animation */
+  
+  
+
+
 }
 
 
 
 
-@media (max-width: 500px) {
+
+
+
+@media (max-width: 600px) {
 
   #mainHeading {
     font-size: 1.6rem;
@@ -337,9 +371,9 @@
   .workCardContent2,
   .workCardContent3,
   .workCardContent4 {
-    bottom: 2rem;
-    left: 1.5rem !important;
-    right: 1.5rem !important;
+    bottom: 3rem;
+    left: 3rem !important;
+    right: 3rem !important;
     line-height: 1.9rem;
   }
 
