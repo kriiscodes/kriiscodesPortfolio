@@ -1,0 +1,146 @@
+
+
+
+body.modal-open {
+  overflow: hidden;
+}
+
+#about {
+  font-family: LibreBaskerville-Regular, Palatino Linotype, Times New Roman, serif;
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 100;
+}
+
+#about.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#modalContainer {
+  display: flex;
+  height: 80%;
+  width: clamp(50%, 95vw, 1200px);
+  background-color: #1c1d25;
+  box-shadow: 1rem 1rem 2rem #030303;
+  position: relative;
+}
+
+.aboutInfo {
+  width: 50%;
+  background-color: #1c1d25;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 5rem;
+  padding-right: 1rem;
+  line-height: 1.5rem;
+  text-align: center;
+}
+
+.aboutInfo > h1 {
+  margin-bottom: 1rem;
+  font-size: clamp(1.5rem, 4vw, 2rem); 
+}
+
+.aboutInfo > h2 {
+  margin-bottom: 1.7rem;
+  font-weight: 200;
+  font-size: clamp(1rem, 2.5vw, .9rem);
+}
+
+.aboutInfo > p {
+  font-weight: 500;
+  font-size: clamp(0.8rem, 2vw, 1rem); 
+  word-spacing: .3rem;
+}
+.aboutInfo span {
+  color: #8c14fc;
+}
+
+.aboutImg {
+  width: 50%;
+  background-color: #1c1d25;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.myImg {
+  height: 65%;
+  width: clamp(70%, 80vw, 90%);
+}
+
+.myImg > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+#close {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  cursor: pointer;
+  color: white;
+}
+
+@media (max-width: 900px) {
+  
+  #modalContainer {
+  display: flex;
+  flex-direction: column-reverse;
+  
+  }
+
+  .aboutInfo,
+  .aboutImg {
+    width: 100%;
+    height: auto;
+    padding: 0 1rem;
+  }
+
+  .aboutInfo {
+    padding-top: 5rem;
+    margin-top: -5rem;
+  }
+.aboutInfo > h1 {
+  margin-bottom: .5rem;
+ 
+}
+
+.aboutInfo > h2 {
+  margin-bottom: .3rem;
+  font-weight: 200;
+  font-size: clamp(.7rem, 2.5vw, 1rem); 
+}
+.aboutInfo > p {
+    padding-bottom: 2rem;
+}
+
+  .aboutImg {
+   /* border: solid; */
+   margin-bottom: 1rem;
+  }
+
+ .myImg {
+  padding-bottom: 2rem;
+  width: clamp(300px, 50%, 400px);   
+  height: clamp(250px, 30vh, 400px); 
+}
+
+#close {
+  right: 1rem;
+  top: 1rem;
+}
+
+
+}

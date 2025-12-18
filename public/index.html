@@ -14,9 +14,10 @@
     <link rel="stylesheet" href="styling/headerStyling.css" />
     <link rel="stylesheet" href="styling/mainStyling.css" />
     <link rel="stylesheet" href="styling/footerStyling.css" />
+    <link rel="stylesheet" href="styling/aboutMe.css" />
   </head>
   <body>
-    <header id="home">
+    <header class="genHeader" id="home">
       <nav class="genLayout">
         <a href="#home"
           ><img
@@ -59,7 +60,37 @@
           <div class="heroContent">
             <h1>Kriiscodes</h1>
             <p>Frontend Dev 🌿 | Future Full Stack</p>
-            <a href="" class="btnFill"><span>About Me</span></a>
+            <a href="#" class="btnFill" id="open"><span>About Me</span></a>
+            <div id="about">
+              <div class="container" id="modalContainer">
+                <div class="aboutInfo">
+                  <h1>About Me.</h1>
+                  <h2>A full-stack developer in progress.</h2>
+                  <p>
+                    My name is Emenike, a <span>developer</span> focused on
+                    building modern, responsive, and scalable
+                    <span>web applications</span>. With a strong foundation in
+                    HTML, CSS, and JavaScript, I enjoy
+                    <span>solving</span> design challenges,
+                    <span>crafting</span> clean user interfaces, and
+                    continuously expanding my skills across the
+                    <span>full-stack</span>.
+                  </p>
+                </div>
+
+                <div class="aboutImg">
+                  <div class="myImg">
+                    <img
+                      src="/public/images/thumbnail_Emenike (4 of 5).jpg"
+                      alt="me"
+                    />
+                  </div>
+                </div>
+                <span id="close">
+                  <i class="fa-solid fa-xmark fa-xl"></i>
+                </span>
+              </div>
+            </div>
           </div>
         </div>
         <div class="socials">
@@ -104,9 +135,7 @@
           <h1>02</h1>
           <div class="workCardContent2">
             <h1>Furniture landing page</h1>
-            <p>
-              Elevate your home with modern furniture.
-            </p>
+            <p>Elevate your home with modern furniture.</p>
             <button class="btnFillWorkCard"><span>View Project</span></button>
           </div>
         </div>
