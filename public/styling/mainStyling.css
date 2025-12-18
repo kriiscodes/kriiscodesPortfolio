@@ -372,8 +372,8 @@
   .workCardContent3,
   .workCardContent4 {
     bottom: 3rem;
-    left: 3rem !important;
-    right: 3rem !important;
+    left:2rem !important;
+    right: 2rem !important;
     line-height: 1.9rem;
   }
 
