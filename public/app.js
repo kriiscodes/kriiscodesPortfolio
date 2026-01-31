@@ -17,10 +17,45 @@ const closeBtn = document.getElementById('close');
 openBtn.addEventListener('click', (e) => {
   e.preventDefault();
   modal.classList.add('show');
-  document.body.classList.add('modal-open');
 });
 
 closeBtn.addEventListener('click', () => {
+  modal.classList.remove('show'); 
+});
+
+// close modal when clicking outside the modal container
+modal.addEventListener('click', () => {
   modal.classList.remove('show');
-  document.body.classList.remove('modal-open');
+});
+
+// prevent closing when clicking inside the modal
+const modalContainer = document.getElementById('modalContainer');
+modalContainer.addEventListener('click', (e) => {
+  e.stopPropagation();
+});
+
+
+const contactBtn = document.getElementById('contactBtn');
+const contactModal = document.getElementById('contactModal');
+const closeContact = document.querySelector('.closeContact');
+
+// open contact modal
+contactBtn.addEventListener('click', (e) => {
+  e.preventDefault(); // stop link from navigating
+  contactModal.classList.add('show');
+});
+
+// close button
+closeContact.addEventListener('click', () => {
+  contactModal.classList.remove('show');
+});
+
+// click outside
+contactModal.addEventListener('click', () => {
+  contactModal.classList.remove('show');
+});
+
+// stop propagation
+contactModal.querySelector('.container').addEventListener('click', e => {
+  e.stopPropagation();
 });

@@ -1,10 +1,6 @@
 
 
 
-body.modal-open {
-  overflow: hidden;
-}
-
 #about {
   font-family: LibreBaskerville-Regular, Palatino Linotype, Times New Roman, serif;
   position: fixed;
@@ -16,6 +12,11 @@ body.modal-open {
   pointer-events: none;
   transition: opacity 0.3s ease;
   z-index: 100;
+  cursor: pointer;
+}
+
+#about .container {
+  cursor: default;
 }
 
 #about.show {
@@ -91,7 +92,20 @@ body.modal-open {
   top: 2rem;
   cursor: pointer;
   color: white;
+  opacity: .7;
+  transition: 0.3s ease;
 }
+
+#close:hover{
+  
+opacity: 1;
+transform: scale(1.2);
+color: #ffffff;
+
+}
+
+
+
 
 @media (max-width: 900px) {
   
