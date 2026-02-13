@@ -29,7 +29,7 @@
           /></a>
           <ul class="navLinks">
             <li><a href="#home" id="homeCol">Home</a></li>
-            <li><a href="">Projects</a></li>
+            <li><a href="#mainHeading">Projects</a></li>
             <li><a href="">Resume</a></li>
             <li>
               <a href="#" id="contactBtn">Contact</a>
@@ -43,7 +43,7 @@
             <a href="#home">Home</a>
             <a href="#projects">Projects</a>
             <a href="#resume">Resume</a>
-            <a href="contact">Contact</a>
+            <a href="#" id="contactBtnMobile">Contact</a>
             <div class="mobileSocials">
               <a href=""><i class="fa-brands fa-x-twitter"></i></a>
               <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
@@ -58,33 +58,48 @@
         <div class="genLayout">
           <div class="heroContent">
             <h1>Kriiscodes</h1>
-            <p>Frontend Dev 🌿 | Future Full Stack</p>
+            <p>Building scalable web applications using React & Django.</p>
             <a href="#" class="btnFill" id="open"><span>About Me</span></a>
-            <div id="about">
+            <div id="about" aria-hidden="true">
               <div class="container" id="modalContainer">
-                <div class="aboutInfo">
-                  <h1>About Me.</h1>
-                  <h2>A full-stack developer in progress.</h2>
-                  <p>
-                    My name is Emenike, a <span>developer</span> focused on
-                    building modern, responsive, and scalable
-                    <span>web applications</span>. With a strong foundation in
-                    HTML, CSS, and JavaScript, I enjoy
-                    <span>solving</span> design challenges,
-                    <span>crafting</span> clean user interfaces, and
-                    continuously expanding my skills across the
-                    <span>full-stack</span>.
-                  </p>
-                </div>
-
-                <div class="aboutImg">
-                  <div class="myImg">
-                    <img src="images/thumbnail_Emenike (4 of 5).jpg" alt="me" />
-                  </div>
-                </div>
                 <span id="close">
                   <i class="fa-solid fa-xmark fa-xl"></i>
                 </span>
+
+                <div class="aboutImg">
+                  <div class="myImg">
+                    <img
+                      src="images/thumbnail_Emenike (4 of 5).jpg"
+                      alt="Emenike portrait"
+                    />
+                  </div>
+                </div>
+
+                <div class="aboutInfo">
+                  <h1 class="aboutTag">Fullstack Engineer</h1>
+
+                  <p>
+                    My name is Emenike, with a background in Electrical and
+                    Electronics Engineering. My foundation in hardware and
+                    embedded systems shaped how I approach software,thinking
+                    in systems, structure, and precision.
+                  </p>
+
+                  <p>
+                    Today, I build scalable <span>web applications</span> using
+                    React and Django, focusing not just on features, but on
+                    clean architecture, maintainability, and understanding how
+                    systems work end-to-end. I’m driven by curiosity and the
+                    desire to design solutions that are structured, efficient,
+                    and built to last.
+                  </p>
+
+                  <div class="aboutHighlights">
+                    <span>Full-Stack Focus</span>
+                    <span>Scalable Systems</span>
+                    <span>Clean Architecture</span>
+                  </div>
+                </div>
               </div>
             </div>
             <div id="contactModal" class="modal">

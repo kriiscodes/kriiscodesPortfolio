@@ -36,14 +36,22 @@ modalContainer.addEventListener('click', (e) => {
 
 
 const contactBtn = document.getElementById('contactBtn');
+const contactBtnMobile = document.getElementById('contactBtnMobile');
 const contactModal = document.getElementById('contactModal');
 const closeContact = document.querySelector('.closeContact');
 
 // open contact modal
-contactBtn.addEventListener('click', (e) => {
-  e.preventDefault(); // stop link from navigating
+const openContactModal = (e) => {
+  e.preventDefault();
   contactModal.classList.add('show');
-});
+  mobileMenu.classList.remove('open');
+  document.body.classList.remove('menu-open');
+};
+
+contactBtn.addEventListener('click', openContactModal);
+if (contactBtnMobile) {
+  contactBtnMobile.addEventListener('click', openContactModal);
+}
 
 // close button
 closeContact.addEventListener('click', () => {
@@ -59,3 +67,6 @@ contactModal.addEventListener('click', () => {
 contactModal.querySelector('.container').addEventListener('click', e => {
   e.stopPropagation();
 });
+
+
+
