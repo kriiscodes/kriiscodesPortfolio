@@ -224,6 +224,7 @@
     grid-template-columns: 1fr;
     padding: 3rem 1rem;
     gap: 2rem;
+  
   }
   .workCard1,
   .workCard2,
@@ -232,7 +233,9 @@
     min-height: 28rem;
     margin-left: 0;
     margin-right: 0;
+    
   }
+
 
   /* number (01, 02...) */
   .workCard1 > h1,
@@ -280,7 +283,7 @@
     position: absolute;
     inset: 0;
     z-index: 0;
-    background-color: rgba(27, 27, 41, 0.8);
+    background-color: rgba(27, 27, 41, 0.85);
     background-blend-mode: darken;
   }
   .workCard1::after,

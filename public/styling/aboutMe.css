@@ -157,7 +157,12 @@ body.about-open {
 @media (max-width: 500px) {
   #modalContainer {
     border-radius: 14px;
-    max-height: calc(80dvh - 1.5rem);
+    max-height: calc(83dvh - 1.5rem);
+  }
+
+
+  .btnFill{
+    padding-block: .6rem;
   }
 
   #close {
