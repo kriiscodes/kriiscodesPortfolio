@@ -179,7 +179,7 @@
 .btnFillWorkCard {
   position: relative;
   display: inline-block;
-  padding: 1rem 1.2rem;
+  padding: .6rem .8rem;
   background: rgb(234, 66, 195,0.9) ;
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.2);

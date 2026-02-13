@@ -1,3 +1,7 @@
+
+body.about-open {
+  overflow: hidden;
+}
 #about {
   font-family: LibreBaskerville-Regular, Palatino Linotype, Times New Roman, serif;
   position: fixed;
@@ -8,7 +12,7 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
-  z-index: 100;
+  z-index: 200;
   cursor: pointer;
   padding: 1rem;
   background: rgba(8, 10, 16, 0.62);
@@ -153,6 +157,7 @@
 @media (max-width: 500px) {
   #modalContainer {
     border-radius: 14px;
+    max-height: calc(80dvh - 1.5rem);
   }
 
   #close {

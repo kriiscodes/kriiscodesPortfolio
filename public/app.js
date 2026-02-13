@@ -9,7 +9,6 @@ hamburger.addEventListener("click", () => {
 });
 
 
-
 const openBtn = document.querySelector('.btnFill');
 const modal = document.getElementById('about');
 const closeBtn = document.getElementById('close');
@@ -17,15 +16,19 @@ const closeBtn = document.getElementById('close');
 openBtn.addEventListener('click', (e) => {
   e.preventDefault();
   modal.classList.add('show');
+  document.body.classList.add('about-open');
 });
 
 closeBtn.addEventListener('click', () => {
   modal.classList.remove('show'); 
+  document.body.classList.remove('about-open');
 });
 
 // close modal when clicking outside the modal container
 modal.addEventListener('click', () => {
   modal.classList.remove('show');
+  document.body.classList.remove('about-open');
+
 });
 
 // prevent closing when clicking inside the modal
@@ -45,7 +48,8 @@ const openContactModal = (e) => {
   e.preventDefault();
   contactModal.classList.add('show');
   mobileMenu.classList.remove('open');
-  document.body.classList.remove('menu-open');
+  document.body.classList.add('no-scroll');
+  
 };
 
 contactBtn.addEventListener('click', openContactModal);
@@ -56,11 +60,13 @@ if (contactBtnMobile) {
 // close button
 closeContact.addEventListener('click', () => {
   contactModal.classList.remove('show');
+  document.body.classList.remove('no-scroll');
 });
 
 // click outside
 contactModal.addEventListener('click', () => {
   contactModal.classList.remove('show');
+  document.body.classList.remove('no-scroll');
 });
 
 // stop propagation
