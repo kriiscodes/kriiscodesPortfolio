@@ -1,78 +1,135 @@
-
-
 const hamburger = document.querySelector(".hamburger");
 const mobileMenu = document.querySelector(".mobileMenu");
 
-hamburger.addEventListener("click", () => {
-  mobileMenu.classList.toggle("open");
-  document.body.classList.toggle("menu-open");
-});
+if (hamburger && mobileMenu) {
+  const closeMobileMenu = () => {
+    mobileMenu.classList.remove("open");
+    hamburger.classList.remove("active");
+    hamburger.setAttribute("aria-expanded", "false");
+    document.body.classList.remove("menu-open");
+  };
 
+  const openMobileMenu = () => {
+    mobileMenu.classList.add("open");
+    hamburger.classList.add("active");
+    hamburger.setAttribute("aria-expanded", "true");
+    document.body.classList.add("menu-open");
+  };
 
-const openBtn = document.querySelector('.btnFill');
-const modal = document.getElementById('about');
-const closeBtn = document.getElementById('close');
+  hamburger.addEventListener("click", () => {
+    if (mobileMenu.classList.contains("open")) {
+      closeMobileMenu();
+      return;
+    }
 
-openBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  modal.classList.add('show');
-  document.body.classList.add('about-open');
-});
+    openMobileMenu();
+  });
 
-closeBtn.addEventListener('click', () => {
-  modal.classList.remove('show'); 
-  document.body.classList.remove('about-open');
-});
+  mobileMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      closeMobileMenu();
+    });
+  });
 
-// close modal when clicking outside the modal container
-modal.addEventListener('click', () => {
-  modal.classList.remove('show');
-  document.body.classList.remove('about-open');
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMobileMenu();
+    }
+  });
 
-});
+  document.addEventListener("click", (event) => {
+    if (!mobileMenu.classList.contains("open")) {
+      return;
+    }
 
-// prevent closing when clicking inside the modal
-const modalContainer = document.getElementById('modalContainer');
-modalContainer.addEventListener('click', (e) => {
-  e.stopPropagation();
-});
+    const clickedInsideMenu = mobileMenu.contains(event.target);
+    const clickedHamburger = hamburger.contains(event.target);
 
+    if (!clickedInsideMenu && !clickedHamburger) {
+      closeMobileMenu();
+    }
+  });
 
-const contactBtn = document.getElementById('contactBtn');
-const contactBtnMobile = document.getElementById('contactBtnMobile');
-const contactModal = document.getElementById('contactModal');
-const closeContact = document.querySelector('.closeContact');
-
-// open contact modal
-const openContactModal = (e) => {
-  e.preventDefault();
-  contactModal.classList.add('show');
-  mobileMenu.classList.remove('open');
-  document.body.classList.add('no-scroll');
-  
-};
-
-contactBtn.addEventListener('click', openContactModal);
-if (contactBtnMobile) {
-  contactBtnMobile.addEventListener('click', openContactModal);
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 900) {
+      closeMobileMenu();
+    }
+  });
 }
 
-// close button
-closeContact.addEventListener('click', () => {
-  contactModal.classList.remove('show');
-  document.body.classList.remove('no-scroll');
-});
+const openBtn = document.querySelector(".btnFill");
+const modal = document.getElementById("about");
+const closeBtn = document.getElementById("close");
 
-// click outside
-contactModal.addEventListener('click', () => {
-  contactModal.classList.remove('show');
-  document.body.classList.remove('no-scroll');
-});
+if (openBtn && modal && closeBtn) {
+  openBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    modal.classList.add("show");
+    document.body.classList.add("about-open");
+  });
 
-// stop propagation
-contactModal.querySelector('.container').addEventListener('click', e => {
-  e.stopPropagation();
-});
+  closeBtn.addEventListener("click", () => {
+    modal.classList.remove("show");
+    document.body.classList.remove("about-open");
+  });
 
+  // Close modal when clicking outside modal container.
+  modal.addEventListener("click", () => {
+    modal.classList.remove("show");
+    document.body.classList.remove("about-open");
+  });
 
+  // Keep modal open when clicking inside content.
+  const modalContainer = document.getElementById("modalContainer");
+  if (modalContainer) {
+    modalContainer.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
+  }
+}
 
+const contactBtn = document.getElementById("contactBtn");
+const contactBtnMobile = document.getElementById("contactBtnMobile");
+const contactModal = document.getElementById("contactModal");
+const closeContact = document.querySelector(".closeContact");
+
+if (contactModal && closeContact) {
+  const openContactModal = (e) => {
+    e.preventDefault();
+    contactModal.classList.add("show");
+
+    if (mobileMenu && hamburger) {
+      mobileMenu.classList.remove("open");
+      hamburger.classList.remove("active");
+      hamburger.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("menu-open");
+    }
+
+    document.body.classList.add("no-scroll");
+  };
+
+  if (contactBtn) {
+    contactBtn.addEventListener("click", openContactModal);
+  }
+
+  if (contactBtnMobile) {
+    contactBtnMobile.addEventListener("click", openContactModal);
+  }
+
+  closeContact.addEventListener("click", () => {
+    contactModal.classList.remove("show");
+    document.body.classList.remove("no-scroll");
+  });
+
+  contactModal.addEventListener("click", () => {
+    contactModal.classList.remove("show");
+    document.body.classList.remove("no-scroll");
+  });
+
+  const contactContainer = contactModal.querySelector(".container");
+  if (contactContainer) {
+    contactContainer.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
+  }
+}

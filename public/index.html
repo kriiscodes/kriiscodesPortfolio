@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="styling/footerStyling.css" />
     <link rel="stylesheet" href="styling/aboutMe.css" />
     <link rel="stylesheet" href="styling/contact.css" />
+    <link rel="stylesheet" href="styling/skills.css" />
   </head>
   <body>
     <header class="genHeader" id="home">
@@ -30,26 +31,44 @@
           <ul class="navLinks">
             <li><a href="#home" id="homeCol">Home</a></li>
             <li><a href="#mainHeading">Projects</a></li>
-            <li><a href="">Resume</a></li>
+            <li><a href="#skillsPage">Skills</a></li>
             <li>
               <a href="#" id="contactBtn">Contact</a>
             </li>
           </ul>
-          <button class="hamburger">
-            <i class="fa-solid fa-bars"></i>
+          <button
+            class="hamburger"
+            type="button"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
           </button>
 
-          <div class="mobileMenu">
+          <div class="mobileMenu" id="mobileMenu">
             <a href="#home">Home</a>
-            <a href="#projects">Projects</a>
-            <a href="#resume">Resume</a>
+            <a href="#mainHeading">Projects</a>
+            <a href="#skillsPage">Skills</a>
             <a href="#" id="contactBtnMobile">Contact</a>
             <div class="mobileSocials">
-              <a href=""><i class="fa-brands fa-x-twitter"></i></a>
-              <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
-              <a href=""><i class="fa-brands fa-github"></i></a>
-              <a href=""><i class="fa-brands fa-instagram"></i></a>
-              <a href=""><i class="fa-brands fa-discord"></i></a>
+              <a href="https://x.com/kriiscodes"
+                ><i class="fa-brands fa-x-twitter"></i
+              ></a>
+              <a href="https://www.linkedin.com/in/emenike-okechukwu-90106239a"
+                ><i class="fa-brands fa-linkedin-in"></i
+              ></a>
+              <a href="https://github.com/Kriiscodes"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+              <a href="https://www.instagram.com/kriiscodes"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="https://discord.com/users/1234567890"
+                ><i class="fa-brands fa-discord"></i
+              ></a>
             </div>
           </div>
         </div>
@@ -79,19 +98,12 @@
                   <h1 class="aboutTag">Fullstack Engineer</h1>
 
                   <p>
-                    My name is Emenike, with a background in Electrical and
-                    Electronics Engineering. My foundation in hardware and
-                    embedded systems shaped how I approach software,thinking
-                    in systems, structure, and precision.
-                  </p>
-
-                  <p>
-                    Today, I build scalable <span>web applications</span> using
-                    React and Django, focusing not just on features, but on
-                    clean architecture, maintainability, and understanding how
-                    systems work end-to-end. I’m driven by curiosity and the
-                    desire to design solutions that are structured, efficient,
-                    and built to last.
+                    My name is Emenike, I build scalable
+                    <span>web applications</span> using React and Django,
+                    focusing not just on features, but on clean architecture,
+                    maintainability, and understanding how systems work
+                    end-to-end. I’m driven by curiosity and the desire to design
+                    solutions that are structured, efficient, and built to last.
                   </p>
 
                   <div class="aboutHighlights">
@@ -128,19 +140,31 @@
         <div class="socials">
           <ul>
             <li>
-              <a href=""><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="https://x.com/kriiscodes" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            </li>
+
+            <li>
+              <a
+                href="https://www.linkedin.com/in/emenike-okechukwu-90106239a"
+                target="_blank"
+                ><i class="fa-brands fa-linkedin-in"></i
+              ></a>
+            </li>
+
+            <li>
+              <a href="https://github.com/kriiscodes" target="_blank"
+                ><i class="fa-brands fa-github"></i
+              ></a>
             </li>
             <li>
-              <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="https://www.tiktok.com/@kriis_codes" target="_blank"
+                ><i class="fa-brands fa-tiktok"></i
+              ></a>
             </li>
             <li>
-              <a href=""><i class="fa-brands fa-github"></i></a>
-            </li>
-            <li>
-              <a href=""><i class="fa-brands fa-instagram"></i></a>
-            </li>
-            <li>
-              <a href=""><i class="fa-brands fa-discord"></i></a>
+              <a href="https://www.instagram.com/kriiscodes/" target="_blank"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
             </li>
           </ul>
         </div>
@@ -153,7 +177,7 @@
       </div>
     </header>
     <main>
-      <h1 id="mainHeading">Projects</h1>
+      <h1 id="mainHeading">Latest Projects</h1>
       <div class="workCards">
         <div class="workCard1">
           <h1>01</h1>
@@ -185,6 +209,56 @@
             <h1>Login Recharge</h1>
             <p>Power Up Your Service.</p>
             <button class="btnFillWorkCard"><span>View Project</span></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="skills" id="skillsPage">
+        <h1>Skills</h1>
+        <div id="usingNow">
+          <h1>Using Now:</h1>
+          <div class="skillIcon">
+            <div id="skillIcon">
+              <span><img src="/public/images/Html5.svg" alt="" /></span>
+              <h2>HTML5</h2>
+            </div>
+            <div id="skillIcon">
+              <span><img src="/public/images/CSS3.svg" alt="" /></span>
+              <h2>CSS3</h2>
+            </div>
+            <div id="skillIcon">
+              <span><img src="/public/images/Js.svg" alt="" /></span>
+              <h2>JavaScript</h2>
+            </div>
+            <div id="skillIcon">
+              <span><img src="/public/images/React.svg" alt="" /></span>
+              <h2>React</h2>
+            </div>
+            <div id="skillIcon">
+              <span><img src="/public/images/Django.svg" alt="" /></span>
+              <h2>Django</h2>
+            </div>
+            <div id="skillIcon">
+              <span><img src="/public/images/git (1).svg" alt="" /></span>
+              <h2>Git</h2>
+            </div>
+          </div>
+        </div>
+        <div id="learning">
+          <h1>Learning:</h1>
+          <div class="skillIcon">
+            <div id="skillIcon">
+              <span><img src="/public/images/Typscript.png" alt="" /></span>
+              <h2>TypeScript</h2>
+            </div>
+            <div id="skillIcon">
+              <span><img src="/public/images/MySQL.svg" alt="" /></span>
+              <h2>MySQL</h2>
+            </div>
+            <div id="skillIcon">
+              <span><img src="/public/images/MongoDb.png" alt="" /></span>
+              <h2>MONGODB</h2>
+            </div>
           </div>
         </div>
       </div>
@@ -221,20 +295,32 @@
       <div class="footerSocials">
         <ul>
           <li>
-            <a href=""><i class="fa-brands fa-x-twitter"></i></a>
-          </li>
-          <li>
-            <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
-          </li>
-          <li>
-            <a href=""><i class="fa-brands fa-github"></i></a>
-          </li>
-          <li>
-            <a href=""><i class="fa-brands fa-instagram"></i></a>
-          </li>
-          <li>
-            <a href=""><i class="fa-brands fa-discord"></i></a>
-          </li>
+              <a href="https://x.com/kriiscodes" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            </li>
+
+            <li>
+              <a
+                href="https://www.linkedin.com/in/emenike-okechukwu-90106239a"
+                target="_blank"
+                ><i class="fa-brands fa-linkedin-in"></i
+              ></a>
+            </li>
+
+            <li>
+              <a href="https://github.com/kriiscodes" target="_blank"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://www.tiktok.com/@kriis_codes" target="_blank"
+                ><i class="fa-brands fa-tiktok"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/kriiscodes/" target="_blank"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+            </li>
         </ul>
       </div>
       <h3>© 2025 Kriiscodes</h3>

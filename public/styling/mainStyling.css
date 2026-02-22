@@ -2,8 +2,9 @@
   padding-top: 6rem;
   text-align: center;
   font-weight: 900;
-  font-size: 2rem;
-  opacity: 0.9;
+  font-size: 1.8rem;
+  /* opacity: 0.9; */
+  color: #504579;
 }
 
 .workCards {
@@ -310,8 +311,10 @@
 
 @media (max-width: 600px) {
   #mainHeading {
-    font-size: 1.6rem;
-  }
+  padding-top: 4rem;
+  font-size: 1.5rem;
+}
+
 
   .workCards {
     padding: 2.5rem 0.6rem;
@@ -337,7 +340,7 @@
   .workCardContent2,
   .workCardContent3,
   .workCardContent4 {
-    bottom: 3rem;
+    bottom: 2rem;
     left: 2rem !important;
     right: 2rem !important;
     line-height: 1.9rem;
@@ -358,7 +361,7 @@
   }
 
   .btnFillWorkCard {
-    padding: 0.6rem 0.8rem;
-    font-size: 0.8rem;
+    padding: 0.5rem 0.6rem;
+    font-size: 0.7rem;
   }
 }
